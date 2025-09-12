@@ -6,7 +6,8 @@ pi = 3.1415926535
 print(a , b, c)  # it will give you an error
 print(a + b)    # it will add both the variable
 print(c)        # It will print Parveen
-print(type(a))      # It will show a which datatype of variable.
+print(type(a))      # It will show a which datatype of variable. Output <class 'int'>
+print(type(pi))      # It will show a which datatype of variable. Output <class 'floating'>
 print("Value of function is", a, c)     # it will give Value of function is 5 Parveen
 print("Print the value {:.3}".format(pi)) # It will print only 2 places of decimal
 
