@@ -39,7 +39,7 @@ print(l)
 
 
 # Tuple
-i = ['Apple','Orange','Banana','Ananas','Pineapple', '78', '89'] # Tuple has start with 0
+i = ['Apple','Orange','Banana','Ananas','Pineapple', 78, 89] # Tuple has start with 0
 j = ('qwerty','asdfgh','zxcvb')
 print(i)
 print(i[3])
