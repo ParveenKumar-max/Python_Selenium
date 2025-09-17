@@ -5,3 +5,5 @@
 13-09-2025 --> Learning Python Scratch - Type Casting, if else elif, For loop, while loop
 
 14-09-2025 --> Learning Python Scratch - While loop
+
+16-09-2025  --> Learning Python Scratch - Class, Method creation
