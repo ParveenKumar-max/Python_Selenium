@@ -6,9 +6,6 @@ class calculator:                   # Calculator is a class
 
     #Define Constructor
 
-
-
-
     def getData(self):                      # Method getData
         print("I'm Parveen Chaudhary. Want to be Sn. Tech Lead of Automation ")
 
