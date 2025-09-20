@@ -7,3 +7,5 @@
 14-09-2025 --> Learning Python Scratch - While loop
 
 16-09-2025  --> Learning Python Scratch - Class, Method creation
+
+18-09-2025  --> Learning Python Scratch - Constructor, Inheritance
