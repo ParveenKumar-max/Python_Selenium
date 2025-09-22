@@ -45,3 +45,5 @@ print(str1.endswith("Chaudhary"))
 print(str4.isalpha())
 #print(str5.isdigit())
 #print(str5.isalnum())
+
+

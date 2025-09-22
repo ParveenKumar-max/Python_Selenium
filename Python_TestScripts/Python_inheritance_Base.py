@@ -11,7 +11,7 @@ class BaseConstructor():
         self.value3 = c
 
     def value(self):
-        return("Creating one return type method ")
+        return("Creating one return type method")
 
     def adding_values(self):
       #  return f"Adding all the values: {self.value1 + self.value2 + self.value3 + self.var_num1}" #Adding all the values: 274
