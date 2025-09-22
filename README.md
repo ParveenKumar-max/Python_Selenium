@@ -11,3 +11,5 @@
 18-09-2025  --> Learning Python Scratch - Constructor, Inheritance
 
 20-09-2025  --> Learning Python Scratch - String
+
+22-09-2028  --> Learning Python Scratch - Read File and Write file, Read content from 1 file to paste or write content in another file.
