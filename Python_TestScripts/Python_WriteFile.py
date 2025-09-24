@@ -2,7 +2,7 @@
 # For writing we have function like
 
 with open('TestFile.txt', 'r') as reader:       #'r' we have to mentioned it, we are reading the content in the file
-    content = reader.readlines()                # Read the whole content in the file
+    content = reader.readlines()                # Read the whole content in the file and stored it in variable.
     reverse_value = list(reversed(content))     # reversed function, reverse the whole file content and stored it in variable
     # Convert reversed iterator into list
     for all_line in reverse_value:

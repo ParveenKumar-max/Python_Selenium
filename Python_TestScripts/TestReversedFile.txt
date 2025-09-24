@@ -1,4 +1,2 @@
-Company = Tech Mahindra Ltd
-Designation = Senior Automation Engineer
-
+Company = Tech Mahindra LtdDesignation = Senior Automation Engineer
 Name = Parveen Chaudhary
