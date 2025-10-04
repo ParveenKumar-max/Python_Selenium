@@ -15,3 +15,7 @@
 22-09-2028  --> Learning Python Scratch - Read File and Write file, Read content from 1 file to paste or write content in another file.
 
 23-09-2025  --> Learning Python Scratch - Exception ( Raise )
+
+25-09-2025 --> Try Catch
+
+27-09-2025  --> Try Catch Example
