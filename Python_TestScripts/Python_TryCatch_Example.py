@@ -10,7 +10,10 @@ def add_to_cart(items_to_add):
 
     if (ItemsInCart + items_to_add > 5):
             raise Exception("Cart limit exceeded.")
-    ItemsInCart += items_to_add
+    #ItemsInCart += items_to_add
+
+    # Another Way to write code
+    ItemsInCart = ItemsInCart + items_to_add
     print(f"{items_to_add} items added. Total in cart: {ItemsInCart}")
 
 
