@@ -1,7 +1,7 @@
 #Parent class of inheritance
 
 
-from Python_TestScripts.Python_inheritance_Base import BaseConstructor
+from Python_TestScripts.PythonBasicwithOops_Level1.Python_inheritance_Base import BaseConstructor
 
 
 class ParentConstructor(BaseConstructor):

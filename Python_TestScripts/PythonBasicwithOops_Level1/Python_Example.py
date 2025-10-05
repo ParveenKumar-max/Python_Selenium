@@ -7,4 +7,4 @@ try:
     person[0] = "John"
     print(person)
 except Exception as e:
-    print(f"Exception is: {e}")
+    print(f"Exception is: {e}")  #9643312717
