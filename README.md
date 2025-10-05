@@ -19,3 +19,7 @@
 25-09-2025 --> Try Catch
 
 27-09-2025  --> Try Catch Example
+
+02-10-2025  -->  Learning Python Scratch --> Selenium Basic Started with Python
+
+05-10-2025  -> Learning Python Scratch - Selenium With python ( open URL, Auotmate the form)
