@@ -25,3 +25,5 @@
 05-10-2025  -> Learning Python Scratch - Selenium With python ( open URL, Auotmate the form)
 
 07-10-2025  --> Learning Python Scratch - Selenium With python class 03
+
+10-10-2025  --> Learning Python Scratch - Selenium With python class 04 ( Handle Dynamic Dropdown )
