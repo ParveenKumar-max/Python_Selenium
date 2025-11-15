@@ -27,3 +27,15 @@
 07-10-2025  --> Learning Python Scratch - Selenium With python class 03
 
 10-10-2025  --> Learning Python Scratch - Selenium With python class 04 ( Handle Dynamic Dropdown )
+
+*************************  Long Break due to cousing marriage ******************************************
+
+
+10-11-2025  --> Learning Python Scratch - Selenium With python class 06 ( Explicit and Implicit wait in python )
+
+
+
+
+
+
+
