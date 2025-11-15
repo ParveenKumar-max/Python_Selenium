@@ -33,6 +33,9 @@
 
 10-11-2025  --> Learning Python Scratch - Selenium With python class 06 ( Explicit and Implicit wait in python )
 
+11-11-2025  --> Learning Python Scratch - Selenium With python class 07 ( Sum Assertion, List assertion )
+
+12-11-2025  --> Learning Python Scratch - Selenium With python class 08 ( Action Classes)
 
 
 
