@@ -22,11 +22,13 @@ driver.find_element(By.CSS_SELECTOR,"button[class='search-button']").click()
 
 time.sleep(5)
 
-Fruits_Selected = driver.find_elements(By.XPATH,"//div[@class='products']") # Give List of items
+Fruits_Selected = driver.find_elements(By.XPATH, "//div[@class='products']/div")
 Count = len(Fruits_Selected)
-assert Count > 0 # check if cunt is greater than zero
+print(Count)
+assert Count > 0
+# EXPLICIT WAIT – wait for each Add to Cart button to be clickable
 for result in Fruits_Selected:
-    result.find_element(By.XPATH,"//div[@class = 'product-action']/button").click()
+    result.find_element(By.CSS_SELECTOR, "div[class='product-action']").click()
 
 print("Add To Cart Selected")
 
