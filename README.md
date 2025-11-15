@@ -37,6 +37,8 @@
 
 12-11-2025  --> Learning Python Scratch - Selenium With python class 08 ( Action Classes)
 
+13-11-2025  --> Learning Python Scratch - Selenium With python with WindowHandles and ActionClasses again
+
 
 
 
