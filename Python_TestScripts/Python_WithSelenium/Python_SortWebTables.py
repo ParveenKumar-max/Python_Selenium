@@ -68,8 +68,4 @@ Input_added1.send_keys("Item 2")
 Search_item = driver.find_element(By.XPATH,"//div[@class='content']/div/ul/li[1]")
 print(Search_item.text, Page_URL1)
 
-
-
-
-
 time.sleep(5)
