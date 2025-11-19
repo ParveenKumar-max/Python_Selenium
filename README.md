@@ -41,7 +41,9 @@
 
 14-11-1025 --> Learning Python Scratch - Selenium With python with IFrame Handle
 
-15-11-2025  --> Learning Python Scratch - Selenium With python with JavaScript Executor and Sort Web element
+15-11-2025  --> Learning Python Scratch - Selenium With python with JavaScript Executor and Sort Web element.
+
+17-11-2025 --> Learning Python Scratch - Selenium With python with Read and write file, Writes in Excel file. Read from excel file, found matching data or records in List Dictionary format.( 19-Nov important topics )
 
 
 
