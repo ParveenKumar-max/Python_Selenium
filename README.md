@@ -45,6 +45,7 @@
 
 17-11-2025 --> Learning Python Scratch - Selenium With python with Read and write file, Writes in Excel file. Read from excel file, found matching data or records in List Dictionary format.( 19-Nov important topics )
 
+20-11-2025 --> Learning Python Scratch - Selenium With python READ, WRITE, FILE UPLOAD, Assertion with Actual Price Expected Price, ETE Testing
 
 
 
