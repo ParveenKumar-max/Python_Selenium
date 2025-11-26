@@ -56,4 +56,6 @@ Install Pytest - pip install pytest , Naming conventions to follow for Pytest Te
 , What are fixtures and importance of their Hooks in Pytest , How Fixtures can be configured in Conftest file for better readability, Different scopes of fixtures and their related annotations to setup, Pre and Post conditions of the Test, How Parameterization can be achieved for Tests with multiple sets of data, How to pass command Line arguments into PyTests
 , Html report Generation for Pytests Execution
 
+22-11-2026 --> Learning Python Scratch - Selenium With Python || Pytest Testing Framework Design For Pytest is in Process
+
 
