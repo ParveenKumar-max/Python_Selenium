@@ -47,6 +47,10 @@
 
 20-11-2025 --> Learning Python Scratch - Selenium With python READ, WRITE, FILE UPLOAD, Assertion with Actual Price Expected Price, ETE Testing
 
+****************************** Pytest Testing Framework *****************************************************
+
+20-11-2025 --> Learning Python Scratch - Selenium With Python || Pytest Testing Framework Started || 
+
 
 
 
