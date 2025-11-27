@@ -49,8 +49,13 @@
 
 ****************************** Pytest Testing Framework *****************************************************
 
-20-11-2025 --> Learning Python Scratch - Selenium With Python || Pytest Testing Framework Started || 
+20-11-2025 --> Learning Python Scratch - Selenium With Python || Pytest Testing Framework Started 
 
+Install Pytest - pip install pytest , Naming conventions to follow for Pytest Tests , Running Pytests from command Line and PyCharm, Running selected test files using pytest,
+,Running selected test Methods based on matching keywords, Pytest Tags Mechanism to run tests based on functionality, Failing and Skipping tests with Annotations using Pytest
+, What are fixtures and importance of their Hooks in Pytest , How Fixtures can be configured in Conftest file for better readability, Different scopes of fixtures and their related annotations to setup, Pre and Post conditions of the Test, How Parameterization can be achieved for Tests with multiple sets of data, How to pass command Line arguments into PyTests
+, Html report Generation for Pytests Execution
 
+22-11-2026 --> Learning Python Scratch - Selenium With Python || Pytest Testing Framework Design For Pytest is in Process
 
 
