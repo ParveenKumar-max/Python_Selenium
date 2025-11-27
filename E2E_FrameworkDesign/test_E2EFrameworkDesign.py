@@ -1,17 +1,22 @@
+import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.edge.service import Service
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
+from PageObject.loginPage import loginPage
 
-def test_E2EFrameworkDesign():
-# Edge Driver services
-    service_object = Service("C:/Users/Default/Documents/msedgedriver.exe")
-    driver = webdriver.Edge(service=service_object)
 
-    driver.implicitly_wait(4)
-    driver.get("https://rahulshettyacademy.com/angularpractice/")
+def test_E2EFrameworkDesign(browserInstance):
+ # Create a conftest file call the driver via creating an instance
+
+    driver = browserInstance
+    login = loginPage(driver)   # Create an Object of loginPage
+    login.enter_username("rahulshettyacademy")
+    login.enter_password("learning")
+    login.enter_submit()
+
 
     #  //a[contains(@href,'shop')]    a[href*='shop']
     driver.find_element(By.CSS_SELECTOR, " a[href*='shop']").click()
@@ -36,4 +41,3 @@ def test_E2EFrameworkDesign():
 
     print("End To End Selenium with Python Flow is completed Successfully")
 
-    driver.close()

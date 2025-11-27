@@ -13,6 +13,13 @@ driver = webdriver.Edge(service=service_object)
 
 driver.implicitly_wait(4)
 driver.get("https://rahulshettyacademy.com/angularpractice/")
+
+#driver.find_element(By.ID, "username").send_keys("rahulshettyacademy")
+#driver.find_element(By.NAME, "password").send_keys("learning")
+#driver.find_element(By.ID, "signInBtn").click()
+
+
+
 #  //a[contains(@href,'shop')]    a[href*='shop']
 driver.find_element(By.CSS_SELECTOR," a[href*='shop']").click()
 products = driver.find_elements(By.XPATH,"//div[@class='card h-100']")
