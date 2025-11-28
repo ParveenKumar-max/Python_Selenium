@@ -1,3 +1,5 @@
+import json
+
 import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -5,39 +7,33 @@ from selenium.webdriver.edge.service import Service
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
+from PageObject.ShopPage import shopPage
 from PageObject.loginPage import loginPage
 
+test_data_file = "C://Users//Parveen//PythonProject_Scratch//PageObject//test_E2EFrameworkDesign.json"
+with open(test_data_file) as f:
+   test_data = json.load(f)
+   test_list = test_data["data"]
 
-def test_E2EFrameworkDesign(browserInstance):
- # Create a conftest file call the driver via creating an instance
+@pytest.mark.parametrize( "test_list_item", test_list)
+def test_E2EFrameworkDesign(browserInstance, test_list_item):
+   driver = browserInstance
+   login_page = loginPage(driver)      # Create an Object of loginPage & ShopPage
+   shop_page = login_page.login(test_list_item["userEmail"], test_list_item["userPassword"])
+   shop_page.clickshop()
+   shop_page.selectItems_tocart(test_list_item["productName"])
 
-    driver = browserInstance
-    login = loginPage(driver)   # Create an Object of loginPage
-    login.enter_username("rahulshettyacademy")
-    login.enter_password("learning")
-    login.enter_submit()
+   # Create an Object of checkout_confirmation and pass the username and password
+
+   checkout_confirmation = shop_page.checkout()
+   checkout_confirmation.checkout()
+   checkout_confirmation.delivery_address("ind")
+   checkout_confirmation.last_validation()
+
+print("Test Executes Successfully")
+print("End To End Selenium with Python Flow is completed Successfully")
 
 
-    #  //a[contains(@href,'shop')]    a[href*='shop']
-    driver.find_element(By.CSS_SELECTOR, " a[href*='shop']").click()
-    products = driver.find_elements(By.XPATH, "//div[@class='card h-100']")
 
-# For loop for fetching all the products
-    for product in products:
-        productName = product.find_element(By.XPATH, "div/h4/a").text
-        if productName == "Blackberry":
-            product.find_element(By.XPATH, "div/button").click()
 
-    driver.find_element(By.CSS_SELECTOR, "a[class*='btn-primary']").click()
-    driver.find_element(By.XPATH, "//button[@class='btn btn-success']").click()
-    driver.find_element(By.ID, "country").send_keys("ind")
-    wait = WebDriverWait(driver, 10)
-    wait.until(expected_conditions.presence_of_element_located((By.LINK_TEXT, "India")))
-    driver.find_element(By.LINK_TEXT, "India").click()
-    driver.find_element(By.XPATH, "//div[@class='checkbox checkbox-primary']").click()
-    driver.find_element(By.CSS_SELECTOR, "[type='submit']").click()
-    successText = driver.find_element(By.CLASS_NAME, "alert-success").text
-    assert "Success! Thank you!" in successText
-
-    print("End To End Selenium with Python Flow is completed Successfully")
 

@@ -1,5 +1,7 @@
 from selenium.webdriver.common.by import By
 
+from PageObject.ShopPage import shopPage
+
 
 class loginPage():
     def __init__(self, driver):  # Create Constructor
@@ -26,3 +28,7 @@ class loginPage():
         self.enter_username(username)
         self.enter_password(password)
         self.enter_submit()
+
+        # Define Shop page in login method under Login Page class
+        shop_page = shopPage(self.driver)
+        return shop_page

@@ -21,7 +21,7 @@ driver.get("https://rahulshettyacademy.com/angularpractice/")
 
 
 #  //a[contains(@href,'shop')]    a[href*='shop']
-driver.find_element(By.CSS_SELECTOR," a[href*='shop']").click()
+#driver.find_element(By.CSS_SELECTOR," a[href*='shop']").click()
 products = driver.find_elements(By.XPATH,"//div[@class='card h-100']")
 
 for product in products :
