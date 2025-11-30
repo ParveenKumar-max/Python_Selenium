@@ -1,10 +1,12 @@
 from selenium.webdriver.common.by import By
 
 from PageObject.checkout_confirmation import checkout_confirm
+from utils.browserUtils import browser_utils
 
 
-class shopPage():
+class shopPage(browser_utils):
     def __init__(self, driver):
+        super().__init__(driver)
         self.driver = driver
 
     # Adding Locators

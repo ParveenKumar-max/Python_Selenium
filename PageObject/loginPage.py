@@ -1,10 +1,12 @@
 from selenium.webdriver.common.by import By
 
 from PageObject.ShopPage import shopPage
+from utils.browserUtils import browser_utils
 
 
-class loginPage():
+class loginPage(browser_utils):
     def __init__(self, driver):  # Create Constructor
+        super().__init__(driver)
         self.driver =  driver
 
  # Locators

@@ -19,14 +19,17 @@ with open(test_data_file) as f:
 def test_E2EFrameworkDesign(browserInstance, test_list_item):
    driver = browserInstance
    login_page = loginPage(driver)      # Create an Object of loginPage & ShopPage
+   print(login_page.getTitle())
    shop_page = login_page.login(test_list_item["userEmail"], test_list_item["userPassword"])
    shop_page.clickshop()
    shop_page.selectItems_tocart(test_list_item["productName"])
+   print(shop_page.getTitle())
 
    # Create an Object of checkout_confirmation and pass the username and password
 
    checkout_confirmation = shop_page.checkout()
    checkout_confirmation.checkout()
+   print(checkout_confirmation.getTitle())
    checkout_confirmation.delivery_address("ind")
    checkout_confirmation.last_validation()
 
