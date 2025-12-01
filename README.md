@@ -62,3 +62,14 @@ Install Pytest - pip install pytest , Naming conventions to follow for Pytest Te
 
 25-11-2025  --> Learning Python Scratch - Selenium With Python || Pytest Testing Framework Design For Pytest -- shop Page and Checkout_Confirmation page, call in TEST file Dynamically
 
+27--11-2025  --> Learning Python Scratch - Selenium With Python || Pytest Testing Framework Design For Pytest -- Utility.py for common TC's
+
+
+
+
+
+
+
+
+
+
