@@ -29,8 +29,13 @@ def test_E2EFrameworkDesign(browserInstance, test_list_item):
 
    checkout_confirmation = shop_page.checkout()
    checkout_confirmation.checkout()
+<<<<<<< HEAD
    checkout_confirmation.delivery_address("ind")
    print(checkout_confirmation.getTitle())
+=======
+   print(checkout_confirmation.getTitle())
+   checkout_confirmation.delivery_address("ind")
+>>>>>>> 8b4a95f7d0941dc87ffe7c183309cdb2b2311491
    checkout_confirmation.last_validation()
 
 print("Test Executes Successfully")
