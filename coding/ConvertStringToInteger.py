@@ -1,5 +1,5 @@
-# Convert String To Inetger
-from unicodedata import decimal
+# Convert String To Integer
+
 
 value_text = input(" Enter the value : ")
 if value_text.isdigit():
@@ -17,4 +17,6 @@ try:
     value_inter1 = int(value_text1)
     print("Converted value is :", value_inter1)
 except ValueError:
-    print("")
+    # Built-in function,
+    # Raised when an operation or function receives an argument that has the right type but an inappropriate value.
+    print("Incorrect value", value_inter1)
