@@ -22,7 +22,7 @@
 
 def palindrome_value(numbers):
     if str(numbers) == str(numbers)[: : -1]:
-        print("Given value is palindrome: ", numbers)
+        print("Given value is palindrome: ")
     else:
         print("Given number is not palindrome")
 
