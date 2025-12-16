@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 
-from PageObject.ShopPage import shopPage
+from E2E_FrameworkDesign.PageObject.ShopPage import shopPage
 from utils.browserUtils import browser_utils
 
 

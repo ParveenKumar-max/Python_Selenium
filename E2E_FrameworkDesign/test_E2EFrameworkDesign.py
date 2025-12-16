@@ -1,14 +1,8 @@
 import json
 
 import pytest
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.edge.service import Service
-from selenium.webdriver.support import expected_conditions
-from selenium.webdriver.support.wait import WebDriverWait
 
-from PageObject.ShopPage import shopPage
-from PageObject.loginPage import loginPage
+from E2E_FrameworkDesign.PageObject.loginPage import loginPage
 
 test_data_file = "C://Users//Parveen//PythonProject_Scratch//E2E_FrameworkDesign//data//test_E2EFrameworkDesign.json"
 with open(test_data_file) as f:
@@ -29,13 +23,12 @@ def test_E2EFrameworkDesign(browserInstance, test_list_item):
 
    checkout_confirmation = shop_page.checkout()
    checkout_confirmation.checkout()
-<<<<<<< HEAD
+
    checkout_confirmation.delivery_address("ind")
    print(checkout_confirmation.getTitle())
-=======
+
    print(checkout_confirmation.getTitle())
    checkout_confirmation.delivery_address("ind")
->>>>>>> 8b4a95f7d0941dc87ffe7c183309cdb2b2311491
    checkout_confirmation.last_validation()
 
 print("Test Executes Successfully")
