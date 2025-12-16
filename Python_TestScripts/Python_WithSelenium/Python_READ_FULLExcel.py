@@ -1,4 +1,6 @@
 import openpyxl
+#Pytest framework, you need the openpyxl library primarily for data-driven testing and test reporting,
+# .whenever your test data or output needs to be stored in or retrieved from Excel spreadsheet files (.xlsx).
 
 sheet = openpyxl.load_workbook(r"C:\Users\Parveen\PythonProject_Scratch\MOCK_DATA.xlsx")
 excel_book = sheet.active
