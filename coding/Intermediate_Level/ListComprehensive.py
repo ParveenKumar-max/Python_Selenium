@@ -1,5 +1,5 @@
 # List Comprehensive --> It is a concise way to create lists using an
-# expression, loop, and optional condition in a single line.”
+# expression, loop, and optional condition in a single line.
 
 val_list = [2,3,4,5,8]
 val_rest = [i ** 2 for i in val_list]
