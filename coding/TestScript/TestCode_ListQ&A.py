@@ -20,3 +20,12 @@ dict['a'] = '456'
 dict.update({'b' : '4569'})
 del dict['b']
 print(dict)
+
+
+a = 1223
+print(a)
+a = "232132"
+print(a)
+a = 123456
+print(a)
+print(a + a)
