@@ -1,5 +1,5 @@
 # Duplicate element found in list
-from multiprocessing.reduction import duplicate
+
 
 list = [1,1,2,2,3,3,4,4,5,5,6,6]
 seen = set()        #set() creates an empty set

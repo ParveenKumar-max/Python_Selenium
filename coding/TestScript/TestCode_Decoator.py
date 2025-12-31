@@ -36,3 +36,24 @@ def MyAfterTest():
 MyAfterTest()
 
 # With the help of decorator, we can hide the main function functionality.
+
+
+def repeat(times):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            for _ in range(times):
+                func(*args, **kwargs)   # *args is  positional argument and **kwargs is Keyword Argument
+        return wrapper
+    return decorator
+
+
+@repeat(3)
+def say_hi():
+    print("Hi")
+
+
+say_hi()
+
+# repeat(times)        ← decorator with argument
+#  └── decorator(func)  ← actual decorator
+#      └── wrapper()    ← wraps the target function

@@ -1,5 +1,16 @@
 # create a Reverse Number
-from math import remainder
+
+# First way to reverse the number, I think it's the best way to reverse the number or character.
+
+Input_reverse = input("Enter the numbers : ")
+char_set = ""
+for i in Input_reverse:
+    char_set = i + char_set
+print(f"Actual number is: {Input_reverse} and the reverse number is: {char_set}")
+
+
+
+# Second way to reverse the number,
 
 num = int(input("Enter the number : "))
 # input() is predefine function for taking input from user as str. So we type Cast it. ( int )
@@ -13,6 +24,15 @@ while num > 0:
 
 print("The given number is {} and reverse number is {}".format(temp, reverse))
 
+# Third way to reverse the number
+
+def My_number_reverse(number):
+    return number[: : -1]
+
+My_Entry = input("Enter any Number : ")
+My_Reversed_number = My_number_reverse(My_Entry)
+print(f"Actual number is: {My_Entry} and the reverse number is: {My_Reversed_number}")
+
 
 # 1. Initial setup
 # num = 123456
@@ -23,7 +43,8 @@ print("The given number is {} and reverse number is {}".format(temp, reverse))
 #
 # Copies 123456 into temp.
 #
-# After the loop, num will become 0, but temp still keeps the original value if you want to print something like “original vs reversed”.
+# After the loop, num will become 0, but temp still keeps the original value
+# if you want to print something like “original vs reversed”.
 #
 # reverse = 0
 #
