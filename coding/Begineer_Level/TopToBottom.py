@@ -1,8 +1,12 @@
 # create a pyramid
+def string_pyramid(number):
+    return ( " " * (My_String -i) + "*" * (2 * i - 1))
 
-num = 5
-for i in range ( 1, num + 1):
-    print( " " * (num -i) + "*" * (2 * i - 1))
+
+num = input("Enter Any Numbers: ")
+My_String = int(num)
+for i in range ( 1, My_String + 1):
+    print(string_pyramid(i))
 
 # Line-by-line explanation
 # num = 5
