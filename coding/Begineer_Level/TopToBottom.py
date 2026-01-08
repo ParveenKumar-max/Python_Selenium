@@ -1,6 +1,6 @@
 # create a pyramid
 def string_pyramid(number):
-    return ( " " * (My_String -i) + "*" * (2 * i - 1))
+    return (" " * (My_String -i) + "*" * (2 * i - 1))
 
 
 num = input("Enter Any Numbers: ")
