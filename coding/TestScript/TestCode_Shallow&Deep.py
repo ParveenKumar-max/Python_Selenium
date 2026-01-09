@@ -2,6 +2,7 @@ import copy
 
 # Original List with nested list. You can only append the nested list not main list content.
 # Because if you append the main list, it wil add the element at the last.
+
 shallow_copy_list = [1,2,[3,4],6,7]
 
 # Copy original list to another via shallow copy
