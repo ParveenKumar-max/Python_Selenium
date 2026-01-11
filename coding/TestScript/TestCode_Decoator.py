@@ -20,7 +20,7 @@ def MyAfterTest():
 MyAfterTest = MyDecorator(MyAfterTest)
 MyAfterTest()
 
-print("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
 
 # Decorator with Syntax
 def MyDecorator(func):
