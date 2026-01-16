@@ -20,3 +20,5 @@ print(calculator(15,26,"subtract"))
 print(calculator(15,36,"division"))
 print(calculator(5,6,"multiply"))
 print(calculator(45,46,"modulus"))
+
+print("Ends the Program")
