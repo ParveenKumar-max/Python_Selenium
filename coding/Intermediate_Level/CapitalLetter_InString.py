@@ -1,9 +1,9 @@
-# Capital Letter in String
+# cHECK HOW MANY Capital Letter in THE String
 
-value = input("Enter Nay Numbers: ")
+value = input("Enter Any Numbers: ")
 sums = 0
 for i in value:
     if i.isupper():
         sums = sums + 1
         print("The upper chars are :", i)
-print("Value in Upper:", value, "is", sums)
+print("Value in UpperCase:", value, "is", sums)
