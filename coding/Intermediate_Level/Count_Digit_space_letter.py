@@ -1,4 +1,4 @@
-# Count Digit Spac letter
+# Count Digit, Space, and alphanumeric in given letter
 
 value = input("Enter any numbers :")
 digit = 0
