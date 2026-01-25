@@ -11,7 +11,5 @@ for text in value:
         space = space + 1
     elif text.isalpha():
         alpha = alpha + 1
-    else:
-        print("no output")
 
 print(f"Digit is: {digit}, Space is {space}, letter is {alpha}")
