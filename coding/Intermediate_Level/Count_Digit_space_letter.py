@@ -1,4 +1,5 @@
 # Count Digit, Space, and alphanumeric in given letter
+# It will check the count of every variable, Important question in an Interview
 
 value = input("Enter any numbers :")
 digit = 0
@@ -11,5 +12,4 @@ for text in value:
         space = space + 1
     elif text.isalpha():
         alpha = alpha + 1
-
 print(f"Digit is: {digit}, Space is {space}, letter is {alpha}")
