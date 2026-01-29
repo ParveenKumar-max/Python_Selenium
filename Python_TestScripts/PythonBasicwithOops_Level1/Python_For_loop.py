@@ -1,16 +1,15 @@
 # For loop condition
 
-value_list = [12,34,45,56,67,78,89,90]
-for length in value_list:
-    print(length)
+value_list1 = [12,34,45]
+for length in value_list1:
+    print(length) # It will print each & every item in the list.
 
-print("Value in for loop printed", length)
 
 # Want to count length
-
+value_list = [12,34,45,56,67,78,89,90]
 counting = 0
 for length_count in value_list:
-    print("Length of list : ", length_count)
+    #print("Length of list : ", length_count)
     counting = counting + length_count
 print("Adding of value_list is : ", counting)
 
@@ -20,5 +19,5 @@ for summation in range(12,34):
     counting = counting + summation
 print("Value of summation is :", counting)
 
-for k in range(1,10,8):
+for k in range(1,10,8): # start, End, reverse ( s, e, -1 )
     print(k)
