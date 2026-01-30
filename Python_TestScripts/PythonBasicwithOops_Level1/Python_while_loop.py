@@ -13,11 +13,11 @@ while a <= 5:
 
 c = int(input("Want to add Integer"))
 d = 0
-while c >= 0:
+while c <= 5:
     d = d + c
-    if  d != 60:
+    if  d != 5:
         print("Value is greater than : ", d)
-    elif d in (5, 10) :
+    elif d in (6, 10) :
         print("Value is equal to tuple: ", d)
     elif d != 3:
         print("Value is not equal to: ", d)
@@ -25,7 +25,7 @@ while c >= 0:
         print("Value of Mod is: ", d)
     else:
         print("Wrong input")
-
+c = c + 1
 
 e = int(input("Want to add Integer"))
 f = 0

@@ -1,5 +1,7 @@
-# Inheritance  means --> Always works in two classes. Base class can fetch or bring all the methods and variables from
-# parent class, Other programming language we use Keyword EXTENDS, But in Python, we declare it in different way.
+# Inheritance  means --> Always works in two classes. Base class can fetch or bring
+# all the methods and variables from
+# parent class, Other programming language we use Keyword EXTENDS,
+# But in Python, we declare it in different way.
 
 
 class BaseConstructor():
@@ -16,7 +18,7 @@ class BaseConstructor():
     def adding_values(self):
       #  return f"Adding all the values: {self.value1 + self.value2 + self.value3 + self.var_num1}" #Adding all the values: 274
         amount_verified =  (self.value1 + self.value2 + self.value3 + self.var_num1) #('Adding all the values', 274)
-        return amount_verified
+        return amount_verified  
 
 
 object_value = BaseConstructor(20, 60, 30)
