@@ -15,4 +15,6 @@ class ParentConstructor(BaseConstructor):
         return f"Final Value: {total_amount + self.var_num2}"
 
 object_parent = ParentConstructor()
-print(object_parent.ParentMethod())
+print(f"Value of Parent or Small class, {object_parent.ParentMethod()}")
+object_base = BaseConstructor(1,2,3)
+print(f"Value of Base or Big class, {object_base.adding_values()}")
