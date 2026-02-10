@@ -3,7 +3,7 @@
 str1 = "Parveen Chaudhary"
 str2 = "Senior Automation Engineer"
 a = 9
-stringCompare = "Chaudhary "
+stringCompare = "Chaud  hary "
 
 
 
@@ -16,6 +16,7 @@ print(str1 + " : ",  str2)  # Easily concatenate two string using
 print(f"{str1}:{str2}, Having {a} of experience.")  # This is the best way to concatenate string and int.
 
 print(stringCompare.strip())  # strip function is used to remove the extra white space from string
+
 print(stringCompare in str1)   # The match is fail because stringCompare String having 1 white space on right side.
 
 removeWhiteSpace = stringCompare.strip() # Remove the extra white space, stored in the variable.
