@@ -7,11 +7,8 @@ class BasicCalculator():
     def getAddition(self):
         return self.firstNumber + self.secondNumber
 
-
-
     def getSubtraction(self):
         return self.firstNumber - self.secondNumber
-
 
     def getMultiplication(self):
         return self.firstNumber * self.secondNumber
