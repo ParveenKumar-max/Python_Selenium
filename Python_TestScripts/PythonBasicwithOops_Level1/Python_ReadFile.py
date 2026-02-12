@@ -26,3 +26,9 @@ for i in values:
 
 
 file.close()
+
+#**************** Another Way to Read the File**************
+
+with open('file1.txt', 'r') as reader:
+    readfile = reader.read()
+    print(readfile)
