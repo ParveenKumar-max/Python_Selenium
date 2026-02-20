@@ -23,6 +23,43 @@ def test_DynamicSelectionCart(page:Page):
 
 def test_childWindowHandle(page:Page):
     page.goto("https://rahulshettyacademy.com/loginpagePractise/")
+    with page.expect_popup() as newPage_value:
+        page.locator(".blinkingText").click() # it will click on Page link
+        ChildPage = newPage_value.value
+        Text = ChildPage.locator(".red").text_content()
+        print(Text)
+        Words = Text.split("at ")
+        print(Words)
+        print(Words[0])
+        print(Words[1])
+        SplitEmail = Words[1].split(" ")[0]
+        print(SplitEmail)
+        try:
+            assert SplitEmail == "mentor@rahulshettyacademy.com"
+            print("Email is successfully verified")
+        except:
+            raise "Email is not correct"
+        finally:
+            print("Code successfully Done")
+    time.sleep(5)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
