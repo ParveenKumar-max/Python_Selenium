@@ -35,15 +35,32 @@ def test_childWindowHandle(page:Page):
         SplitEmail = Words[1].split(" ")[0]
         print(SplitEmail)
         try:
-            assert SplitEmail == "mentor@rahulshettyacademy.com"
+            assert SplitEmail == "mentor@rahulshettyacademy.com1"
             print("Email is successfully verified")
         except:
-            raise "Email is not correct"
+            raise AssertionError ("Email is not correct")
         finally:
             print("Code successfully Done")
     time.sleep(5)
 
+def test_childWindowHandleUpdate(page: Page):
+    page.goto("https://rahulshettyacademy.com/loginpagePractise/")
 
+    with page.expect_popup() as popup_info:
+        page.locator(".blinkingText").click()
+
+    child_page = popup_info.value
+    child_page.wait_for_load_state()
+
+    text = child_page.locator(".red").text_content()
+    print(text)
+
+    email = text.split("at ")[1].split(" ")[0]
+    print("Extracted Email:", email)
+
+    assert email == "mentor@rahulshettyacademy.com", "Email is not correct"
+
+    print("Email is successfully verified")
 
 
 
