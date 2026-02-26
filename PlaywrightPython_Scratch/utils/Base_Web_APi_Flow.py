@@ -9,23 +9,25 @@ Login_Details = {"userEmail": "parveendogra2@gmail.com", "userPassword": "Qwerty
 class APIUtils:
 
     def test_getToken(self, playwright:Playwright):
-        api_base_url = playwright.request.new_context(base_url="http://rahulshettyacademy.com")
-        response = api_base_url.post("api/ecom/auth/login", data=Login_Details)
+        api_base_url = playwright.request.new_context(base_url="https://rahulshettyacademy.com")
+        response = api_base_url.post("/api/ecom/auth/login", data=Login_Details)
 
         assert response.ok
         print(response.json())
         response_body = response.json()
         return response_body["token"]
 
-
     def test_OrderCreater(self, playwright:Playwright):
         token = self.test_getToken(playwright)
-        api_base_url = playwright.request.new_context(base_url="http://rahulshettyacademy.com")
-        response = api_base_url.post("api/ecom/order/create-order",
+        api_base_url = playwright.request.new_context(base_url="https://rahulshettyacademy.com")
+        response = api_base_url.post("/api/ecom/order/create-order",
                             data=Order_Details,
                             headers={"Authorization": token, "Content-Type": "application/json"})
 
         print(response.json())
+        response_body = response.json()
+        OrderID = response_body["orders"][0]
+        return OrderID
 
 
 
