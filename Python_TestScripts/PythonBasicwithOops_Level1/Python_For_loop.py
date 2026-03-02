@@ -21,3 +21,9 @@ print("Value of summation is :", counting)
 
 for k in range(1,10,8): # start, End, reverse ( s, e, -1 )
     print(k)
+
+print("!***********************!")
+
+num = 11
+for i in range (1,11):
+    print (i)
