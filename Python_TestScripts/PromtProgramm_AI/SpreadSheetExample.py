@@ -7,7 +7,7 @@ scores_names = [
     "Elizabeth (60)", "William (81)", "Sofia (68)", "Michael (77)", "Grace (93)"
 ]
 # Sort the scores and names in descending order
-sorted_scores_names = sorted(scores_names, key=lambda x: int(x.split(" ")[-1][1:-1]), reverse=True)
+sorted_scores_names = sorted(scores_names, key=lambda x: int(x.split(" ")[-1][1:-1]), reverse=False)
 
 # Format the scores and names as "Name (score)" pairs
 formatted_scores_names = [f"{item.split(' ')[0]} ({item.split(' ')[-1][1:-1]})" for item in sorted_scores_names]
