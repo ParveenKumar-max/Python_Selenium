@@ -1,10 +1,12 @@
-# Network Intercepting Request 7 Response
+# Network Intercepting Request & Response
+
 from playwright.sync_api import Page
 
 fakePayload_Intercept = {"data":[],"message":"No Orders"}
 
 def intercept_response(route):
-    route.fulfil(json=fakePayload_Intercept)
+    route.fulfill(json=fakePayload_Intercept)
+
 
 #-> api call from browser-> api call contact server return back response to browser-> browser use response to generate html
 def test_NetworkIntercepting(page:Page):
