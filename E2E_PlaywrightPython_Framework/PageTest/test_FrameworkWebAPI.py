@@ -1,6 +1,7 @@
 import json
 import time
 
+import pytest
 from playwright.sync_api import Playwright, expect
 
 from E2E_PlaywrightPython_Framework.Utils.Base_WebAPI_PlaywrightPython import APIUtils
@@ -10,25 +11,25 @@ from E2E_PlaywrightPython_Framework.Utils.Base_WebAPI_PlaywrightPython import AP
 with open('../data/dataFile.json') as file:
     text_data = json.load(file)
     print(text_data)
-    user_credentials = text_data.
+    user_credentials_list = text_data['User_Credentials_data']
 
 
 # Automate the Web API
-
-def test_E2EWebAPI_Validation(playwright:Playwright):
+@pytest.mark.parametrize('User_Credentials_data', user_credentials_list)
+def test_E2EWebAPI_Validation(playwright:Playwright, User_Credentials_data):
     browser = playwright.chromium.launch(headless=False) # By Default, headless is true
     context = browser.new_context()
     page = context.new_page()
 
     #create Order Id
     apiutils = APIUtils()
-    OrderID = apiutils.test_OrderCreator(playwright)
-
+    OrderID = apiutils.test_OrderCreator(playwright, User_Credentials_data)
+    time.sleep(5)
     page.goto("https://rahulshettyacademy.com/client")
+  # Enter the login credentials 8882698735
 
-    # Enter the login credentials 8882698735
-    page.get_by_placeholder("email@example.com").fill("parveendogra2@gmail.com")
-    page.locator("#userPassword").fill("Qwerty12345@")
+    page.get_by_placeholder("email@example.com").fill(User_Credentials_data["userEmail"])
+    page.locator("#userPassword").fill(User_Credentials_data["userPassword"])
     page.get_by_role("button").click()
 
     # Order History Page
