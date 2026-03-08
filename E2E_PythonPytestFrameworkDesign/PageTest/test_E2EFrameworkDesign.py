@@ -2,9 +2,9 @@ import json
 
 import pytest
 
-from E2E_FrameworkDesign.PageObject.loginPage import loginPage
+from E2E_PythonPytestFrameworkDesign.PageObject.loginPage import loginPage
 
-test_data_file = "C:/Users/Parveen/PythonProject_Scratch/E2E_FrameworkDesign/data/test_E2EFrameworkDesign.json"
+test_data_file = "/E2E_PythonPytestFrameworkDesign/data/test_E2EFrameworkDesign.json"
 with open(test_data_file) as f:
    test_data = json.load(f)
    test_list = test_data["data"]

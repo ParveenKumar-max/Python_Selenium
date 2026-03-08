@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 
-from E2E_FrameworkDesign.PageObject.checkout_confirmation import checkout_confirm
+from E2E_PythonPytestFrameworkDesign.PageObject.checkout_confirmation import checkout_confirm
 from utils.browserUtils import browser_utils
 
 
