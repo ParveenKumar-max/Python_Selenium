@@ -2,13 +2,17 @@ import json
 import time
 
 import pytest
-from playwright.sync_api import Playwright, expect
+from playwright.sync_api import Playwright
 
+from E2E_PlaywrightPython_Framework.PageObject.dashboard import dashboard
+from E2E_PlaywrightPython_Framework.PageObject.login import loginpage
+from E2E_PlaywrightPython_Framework.PageObject.orderDetailsSuccess import orderDetailSuccess
+from E2E_PlaywrightPython_Framework.PageObject.orderHistory import orderHistory
 from E2E_PlaywrightPython_Framework.Utils.Base_WebAPI_PlaywrightPython import APIUtils
 
 # Json file --> Utils --> access into test
-
-with open('../data/dataFile.json') as file:
+file_path = "C:/Users/Parveen/PythonProject_Scratch/E2E_PlaywrightPython_Framework/data/dataFile.json"
+with open(file_path) as file:
     text_data = json.load(file)
     print(text_data)
     user_credentials_list = text_data['User_Credentials_data']
@@ -21,24 +25,40 @@ def test_E2EWebAPI_Validation(playwright:Playwright, User_Credentials_data):
     context = browser.new_context()
     page = context.new_page()
 
+    userName = User_Credentials_data["userEmail"]
+    password = User_Credentials_data["userPassword"]
+
     #create Order Id
     apiutils = APIUtils()
     OrderID = apiutils.test_OrderCreator(playwright, User_Credentials_data)
-    time.sleep(5)
-    page.goto("https://rahulshettyacademy.com/client")
-  # Enter the login credentials 8882698735
 
-    page.get_by_placeholder("email@example.com").fill(User_Credentials_data["userEmail"])
-    page.locator("#userPassword").fill(User_Credentials_data["userPassword"])
-    page.get_by_role("button").click()
+    #login Page
+    login_page = loginpage(page)
+    login_page.loginNavigate()
+    login_page.enter_details(userName, password)
 
-    # Order History Page
-    page.get_by_role("button",name="ORDERS").click()
-    row = page.locator("tr").filter(has_text=OrderID)
-    row.get_by_role("button",name="View").click()
-    expect(page.locator(".tagline")).to_contain_text("Thank you for Shopping With Us")
+    #dashboard Page
+    dashboard_page = dashboard(page)
+    dashboard_page.selectOrderNavigation()
+
+    #order History
+    order_history = orderHistory(page)
+    order_history.selectOrder(OrderID)
+
+    # order Detail
+    order_detail = orderDetailSuccess(page)
+    order_detail.orderDetail()
+
+    # use playwright wait
+    page.wait_for_timeout(5000)
     context.close()
-    time.sleep(5)
+
+
+
+
+    # More better way
+
+    #page.wait_for_load_state("networkidle")
 
     #Checking the API -- Order History page --> Order is Present
     # But before that we have to create an API Class.

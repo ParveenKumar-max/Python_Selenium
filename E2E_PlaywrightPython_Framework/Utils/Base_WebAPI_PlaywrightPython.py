@@ -8,10 +8,12 @@ Order_Details = {"orders": [{"country": "India", "productOrderedId": "6960eac0c9
 class APIUtils:
 
     def test_getToken(self, playwright:Playwright, User_Credentials_data):
-        user_email = User_Credentials_data["userEmail"]
-        user_password = User_Credentials_data["userPassword"]
+        user_email = User_Credentials_data['userEmail']
+        user_password = User_Credentials_data['userPassword']
+
         api_base_url = playwright.request.new_context(base_url="https://rahulshettyacademy.com")
-        response = api_base_url.post("/api/ecom/auth/login", data={"userEmail": user_email, "userPassword": user_password})
+        response = api_base_url.post(
+            "/api/ecom/auth/login", data={"userEmail": user_email, "userPassword": user_password})
 
         assert response.ok
         print(response.json())
@@ -24,6 +26,7 @@ class APIUtils:
         response = api_base_url.post("/api/ecom/order/create-order",
                             data=Order_Details,
                             headers={"Authorization": token, "Content-Type": "application/json"})
+        #When using json=, Playwright automatically sets:  "Content-Type": "application/json"
 
         print(response.json())
         response_body = response.json()
