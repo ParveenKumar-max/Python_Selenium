@@ -20,11 +20,7 @@ with open(file_path) as file:
 
 # Automate the Web API
 @pytest.mark.parametrize('User_Credentials_data', user_credentials_list)
-def test_E2EWebAPI_Validation(playwright:Playwright, User_Credentials_data):
-    browser = playwright.chromium.launch(headless=False) # By Default, headless is true
-    context = browser.new_context()
-    page = context.new_page()
-
+def test_E2EWebAPI_Validation(playwright:Playwright, User_Credentials_data, openbrowser):
     userName = User_Credentials_data["userEmail"]
     password = User_Credentials_data["userPassword"]
 
@@ -33,25 +29,24 @@ def test_E2EWebAPI_Validation(playwright:Playwright, User_Credentials_data):
     OrderID = apiutils.test_OrderCreator(playwright, User_Credentials_data)
 
     #login Page
-    login_page = loginpage(page)
+    login_page = loginpage(openbrowser)
     login_page.loginNavigate()
     login_page.enter_details(userName, password)
 
     #dashboard Page
-    dashboard_page = dashboard(page)
+    dashboard_page = dashboard(openbrowser)
     dashboard_page.selectOrderNavigation()
 
     #order History
-    order_history = orderHistory(page)
+    order_history = orderHistory(openbrowser)
     order_history.selectOrder(OrderID)
 
     # order Detail
-    order_detail = orderDetailSuccess(page)
+    order_detail = orderDetailSuccess(openbrowser)
     order_detail.orderDetail()
 
-    # use playwright wait
-    page.wait_for_timeout(5000)
-    context.close()
+
+
 
 
 

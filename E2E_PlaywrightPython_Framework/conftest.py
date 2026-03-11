@@ -1,7 +1,29 @@
-# In conftest file we will define our fixture, OR resuable code.
+# In conftest file we will define our fixture, OR reusable code.
 import pytest
+
+
+def pytest_addoption(parser):
+    parser.addoption(
+        "--browser_name", action="store", default="chrome", help="browser selection"
+    )
 
 
 @pytest.fixture(scope='session')
 def User_Credentials_data(request):
     return request.param()
+
+@pytest.fixture()
+def openbrowser(playwright, request): # With the help of request we can use the local and global variables
+    browser_name = request.config.getoption("browser_name")
+    if browser_name == "chrome":
+        browser = playwright.chromium.launch(headless=False)  # By Default, headless is true
+    elif browser_name == "firefox":
+        browser = playwright.firefox.launch(headless=False)
+
+    context = browser.new_context()
+    page = context.new_page()
+    yield page
+    # use playwright wait
+    page.wait_for_timeout(5000)
+    context.close()
+    browser.close()
