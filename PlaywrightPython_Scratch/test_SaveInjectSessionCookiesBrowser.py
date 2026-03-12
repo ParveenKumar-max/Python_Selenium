@@ -1,11 +1,12 @@
 # In this file, we save & inject the session & cookies in the browser at run time.
 import time
 
+import pytest
 from playwright.sync_api import Playwright, expect
 
 from PlaywrightPython_Scratch.utils.Base_Web_APi_Flow import APIUtils
 
-
+@pytest.mark.smoke
 def test_session_storage(playwright: Playwright):
     Get_api = APIUtils()
     getToken = Get_api.test_getToken(playwright)

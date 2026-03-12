@@ -1,8 +1,10 @@
 import time
 
+import pytest
 from playwright.sync_api import Page, expect
 
 #hide/display and placeholder
+@pytest.mark.smoke
 def test_CheckVisibleInvisibleChecks(page:Page):
     page.goto("https://rahulshettyacademy.com/AutomationPractice/")
     page.mouse.wheel(0,500)
@@ -13,6 +15,7 @@ def test_CheckVisibleInvisibleChecks(page:Page):
     time.sleep(5)
 
 #AlertBoxes
+@pytest.mark.smoke
 def test_AlertPopsCheck(page:Page):
     page.goto("https://rahulshettyacademy.com/AutomationPractice/")
     page.get_by_role("button", name="Alert").click()
@@ -22,6 +25,7 @@ def test_AlertPopsCheck(page:Page):
     time.sleep(5)
 
 #FrameHandling
+@pytest.mark.smoke
 def test_iframeInOutChecks(page:Page):
     page.goto("https://rahulshettyacademy.com/AutomationPractice/")
     page.mouse.wheel(0,1000)
@@ -33,6 +37,7 @@ def test_iframeInOutChecks(page:Page):
 #identify the price column
 #identify rice row
 # extract the price of the rice.
+@pytest.mark.smoke
 def test_HandleWebTables(page:Page):
     page.goto("https://rahulshettyacademy.com/seleniumPractise/#/offers")
     Table_Heading = page.locator("th").count()
@@ -47,6 +52,7 @@ def test_HandleWebTables(page:Page):
     expect(Rice_Row.locator("td").nth(PriceValueColumn)).to_have_text("37")
 
 #Same Web Tables login but different approach
+@pytest.mark.smoke
 def test_HandleWebTables1(page: Page):
     page.goto("https://rahulshettyacademy.com/seleniumPractise/#/offers")
     headers = page.locator("th")

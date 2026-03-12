@@ -45,12 +45,6 @@ def test_E2EWebAPI_Validation(playwright:Playwright, User_Credentials_data, open
     order_detail = orderDetailSuccess(openbrowser)
     order_detail.orderDetail()
 
-
-
-
-
-
-
     # More better way
 
     #page.wait_for_load_state("networkidle")
