@@ -1,5 +1,4 @@
 import json
-import time
 
 import pytest
 from playwright.sync_api import Playwright
@@ -9,6 +8,8 @@ from E2E_PlaywrightPython_Framework.PageObject.login import loginpage
 from E2E_PlaywrightPython_Framework.PageObject.orderDetailsSuccess import orderDetailSuccess
 from E2E_PlaywrightPython_Framework.PageObject.orderHistory import orderHistory
 from E2E_PlaywrightPython_Framework.Utils.Base_WebAPI_PlaywrightPython import APIUtils
+
+# pytest --browser_name chrome -m smoke -n 3 --tracing on --html=report.html
 
 # Json file --> Utils --> access into test
 file_path = "C:/Users/Parveen/PythonProject_Scratch/E2E_PlaywrightPython_Framework/data/dataFile.json"
