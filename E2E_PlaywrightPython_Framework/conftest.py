@@ -1,4 +1,5 @@
 # In conftest file we will define our fixture, OR reusable code.
+#Fixture we will use to set up and tear down the test script
 import pytest
 
 
@@ -10,7 +11,6 @@ def pytest_addoption(parser):
         "--url_name", action="store", default="https://rahulshettyacademy.com/client", help="browser selection"
     )
 
-#Fixture we will use to set up and tear down the test script
 @pytest.fixture(scope='session')
 def User_Credentials_data(request):
     return request.param()

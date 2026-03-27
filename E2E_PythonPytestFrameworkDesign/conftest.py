@@ -19,17 +19,14 @@ def pytest_addoption(parser):
 @pytest.fixture(scope="session")
 def browserInstance(request):
     global driver
-
     # pick the browser what we ask in terminal  " pytest test_E2EFrameworkDesign.py --browser_name chrome "
     browser_name = request.config.getoption("browser_name")
-
     if browser_name  == "edge":
         options = webdriver.EdgeOptions()       # option class we used to capture the logs
         options.set_capability("goog:loggingPrefs", {"browser": "ALL"})
 
         service_object = Service("C:/Users/Default/Documents/msedgedriver.exe")
         driver = webdriver.Edge(service=service_object, options=options)
-
     elif browser_name =="chrome":
         options = webdriver.ChromeOptions()    # option class we used to capture the logs
         options.set_capability("goog:loggingPrefs", {"browser": "ALL"})
