@@ -1,7 +1,7 @@
 # Practise of Armstrong number
 
 # A number is Armstrong if the sum of each digit raised to the power
-# of the number of digits equals the number itself.
+# of the number of digits equals the number itself
 
 # 1³ + 5³ + 3³
 # = 1 + 125 + 27
