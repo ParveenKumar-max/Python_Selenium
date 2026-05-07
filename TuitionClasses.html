@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sunny Tuition Classes | Nursery to 10</title>
+  <style>
+    :root {
+      --primary: #3c6e71;
+      --secondary: #d9ed92;
+      --accent: #ffba08;
+      --bg: #f3f6f9;
+      --text: #1f2a44;
+      --card: #ffffff;
+      --radius: 18px;
+      --shadow: 0 16px 40px rgba(31, 42, 68, 0.11);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #eef6ff 0%, #f6fafc 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primary);
+      color: #fff;
+      padding: 3rem 1.5rem 4rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      letter-spacing: -0.04em;
+    }
+
+    header p {
+      max-width: 700px;
+      margin: 1rem auto 0;
+      font-size: 1.05rem;
+      opacity: 0.93;
+    }
+
+    .wrapper {
+      width: min(1200px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 3rem 0 4rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .cards {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.6rem;
+      border: 1px solid rgba(60, 110, 113, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 55px rgba(31, 42, 68, 0.14);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--primary);
+    }
+
+    .class-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.45rem 0.8rem;
+      background: var(--secondary);
+      color: #1f2a44;
+      border-radius: 999px;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.95rem 1.5rem;
+      border: none;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #1f2a44;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s ease, filter 0.2s ease;
+      text-decoration: none;
+    }
+
+    .cta:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.03);
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+    }
+
+    .section-heading p {
+      margin: 0;
+      max-width: 620px;
+      opacity: 0.8;
+    }
+
+    .highlight {
+      color: var(--accent);
+    }
+
+    .features {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .feature-icon {
+      font-size: 1.55rem;
+      background: rgba(255, 186, 8, 0.16);
+      color: #b57d00;
+      width: 3rem;
+      height: 3rem;
+      display: grid;
+      place-items: center;
+      border-radius: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .form-grid input,
+    .form-grid select,
+    .form-grid textarea {
+      width: 100%;
+      padding: 0.95rem 1rem;
+      border: 1px solid #d8dee7;
+      border-radius: 14px;
+      font: inherit;
+      background: #fff;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .form-grid input:focus,
+    .form-grid select:focus,
+    .form-grid textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(60, 110, 113, 0.12);
+    }
+
+    .form-grid textarea {
+      grid-column: 1 / -1;
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .form-actions {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem 3rem;
+      color: rgba(31, 42, 68, 0.74);
+      font-size: 0.95rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      gap: 0.45rem;
+      align-items: center;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.15);
+      padding: 0.8rem 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.25rem;
+    }
+
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      place-items: center;
+      background: rgba(17, 28, 52, 0.65);
+      padding: 1.5rem;
+      z-index: 50;
+    }
+
+    .modal.active {
+      display: grid;
+    }
+
+    .modal-content {
+      background: #fff;
+      border-radius: 24px;
+      max-width: 520px;
+      width: 100%;
+      padding: 2rem;
+      box-shadow: 0 28px 80px rgba(31, 42, 68, 0.2);
+      text-align: center;
+    }
+
+    .modal-content h3 {
+      margin-top: 0;
+    }
+
+    .modal-content button {
+      margin-top: 1.75rem;
+      padding: 0.95rem 1.2rem;
+      border: none;
+      border-radius: 999px;
+      background: var(--primary);
+      color: white;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    @media (max-width: 800px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        padding: 2.5rem 1rem 3rem;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .cta {
+        width: 100%;
+      }
+
+      .stat-card {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrapper">
+      <span class="badge">Nursery to Class 10 | Expert Tutors | Confidence Boost Lessons</span>
+      <h1>Ravina Tuition Classes</h1>
+      <p>Get personal attention, structured lessons, and exam-ready confidence for students from Nursery through Class 10.</p>
+    </div>
+  </header>
+
+  <main class="wrapper">
+    <section>
+      <div class="section-heading">
+        <div>
+          <h2>Choose your class level</h2>
+          <p>Explore tailored programs for every stage, from early foundations to secondary exam preparation.</p>
+        </div>
+        <button class="cta" onclick="openModal('Request a Callback')">Request a Callback</button>
+      </div>
+
+      <div class="grid cards">
+        <article class="card">
+          <span class="class-tag">Nursery - UKG</span>
+          <h3>Foundation Confidence</h3>
+          <p>Early learning made fun with phonics, number sense, handwriting, and activity-based lessons.</p>
+          <ul>
+            <li>Interactive story time</li>
+            <li>Rhymes &amp; handwriting practice</li>
+            <li>Basic English, Maths, and general awareness</li>
+          </ul>
+          <button class="cta" onclick="enroll('Nursery to UKG')">Enroll Now</button>
+        </article>
+
+        <article class="card">
+          <span class="class-tag">Class 1 - 3</span>
+          <h3>Strong Basics</h3>
+          <p>Engaging lessons for reading, numeracy, and building curiosity in Science and Social Studies.</p>
+          <ul>
+            <li>Concept clarity with visuals</li>
+            <li>Homework help &amp; practice sheets</li>
+            <li>Regular progress reports</li>
+          </ul>
+          <button class="cta" onclick="enroll('Class 1 to 3')">Enroll Now</button>
+        </article>
+
+        <article class="card">
+          <span class="class-tag">Class 4 - 5</span>
+          <h3>Smart Learners</h3>
+          <p>Build speed and accuracy in Maths while strengthening English writing and foundational Science concepts.</p>
+          <ul>
+            <li>Worksheet-driven revision</li>
+            <li>Exam strategy and doubt clearing</li>
+            <li>Activity-based science experiments</li>
+          </ul>
+          <button class="cta" onclick="enroll('Class 4 to 5')">Enroll Now</button>
+        </article>
+
+        <article class="card">
+          <span class="class-tag">Class 6 - 8</span>
+          <h3>Exam Ready</h3>
+          <p>Focused coaching for English, Maths, Science, and Social Studies with regular topic tests.</p>
+          <ul>
+            <li>Concept tutorials and sample papers</li>
+            <li>Time management tips</li>
+            <li>Weekly performance feedback</li>
+          </ul>
+          <button class="cta" onclick="enroll('Class 6 to 8')">Enroll Now</button>
+        </article>
+
+        <article class="card">
+          <span class="class-tag">Class 9 - 10</span>
+          <h3>Score Boost</h3>
+          <p>Structured preparation for board exams with strong emphasis on problem solving and long-answer writing.</p>
+          <ul>
+            <li>Chapter-wise revision plans</li>
+            <li>Sample test series</li>
+            <li>Personalized doubt sessions</li>
+          </ul>
+          <button class="cta" onclick="enroll('Class 9 to 10')">Enroll Now</button>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <div>
+          <h2>Why parents choose us</h2>
+          <p>Benefit from a complete learning ecosystem built for steady improvement and joyful learning.</p>
+        </div>
+      </div>
+
+      <div class="grid features">
+        <article class="card">
+          <div class="feature-icon">📚</div>
+          <h3>Curriculum-aligned</h3>
+          <p>Lessons designed to match CBSE, ICSE and state board syllabi for all classes.</p>
+        </article>
+        <article class="card">
+          <div class="feature-icon">👩‍🏫</div>
+          <h3>Experienced Tutors</h3>
+          <p>Qualified teachers with a strong record of helping students improve grades and confidence.</p>
+        </article>
+        <article class="card">
+          <div class="feature-icon">📝</div>
+          <h3>Daily Practice</h3>
+          <p>Regular worksheets, revision quizzes, and topic tests to build strong recall.</p>
+        </article>
+        <article class="card">
+          <div class="feature-icon">💬</div>
+          <h3>Parent Communication</h3>
+          <p>Weekly progress updates and direct support for resolving academic questions.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <div>
+          <h2>Enrollment details</h2>
+          <p>Fill the form below and we will get back to you within 24 hours with a suitable batch and schedule.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <form id="enrollForm" onsubmit="submitForm(event)">
+          <div class="form-grid">
+            <input type="text" id="studentName" name="studentName" placeholder="Student Name" required />
+            <input type="text" id="parentName" name="parentName" placeholder="Parent / Guardian Name" required />
+            <input type="tel" id="phone" name="phone" placeholder="Phone Number" required />
+            <input type="email" id="email" name="email" placeholder="Email Address" required />
+            <select id="classLevel" name="classLevel" required>
+              <option value="">Select Class Level</option>
+              <option>Nursery to UKG</option>
+              <option>Class 1 to 3</option>
+              <option>Class 4 to 5</option>
+              <option>Class 6 to 8</option>
+              <option>Class 9 to 10</option>
+            </select>
+            <input type="text" id="preferredTiming" name="preferredTiming" placeholder="Preferred Timing (e.g. 5pm - 7pm)" required />
+            <textarea id="message" name="message" placeholder="Tell us more about your child's needs"></textarea>
+          </div>
+          <div class="form-actions">
+            <button class="cta" type="submit">Submit Enrollment</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Sunny Tuition Classes | Nursery to 10 | Designed for confident learning and exam success.</p>
+  </footer>
+
+  <div id="modal" class="modal" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <h3 id="modalTitle">Contact Request</h3>
+      <p>Thank you! We will contact you soon with the best batch and schedule.</p>
+      <button onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    function openModal(level) {
+      const modal = document.getElementById('modal');
+      const modalTitle = document.getElementById('modalTitle');
+      modalTitle.textContent = `Request for ${level}`;
+      modal.classList.add('active');
+    }
+
+    function closeModal(event) {
+      if (event && event.target !== event.currentTarget) return;
+      document.getElementById('modal').classList.remove('active');
+    }
+
+    function enroll(level) {
+      openModal(level);
+    }
+
+    function submitForm(event) {
+      event.preventDefault();
+      const form = document.getElementById('enrollForm');
+      const name = form.studentName.value.trim();
+      const level = form.classLevel.value;
+
+      if (!name || !level) {
+        alert('Please fill in the student name and select a class level.');
+        return;
+      }
+
+      openModal(`${name} - ${level}`);
+      form.reset();
+    }
+  </script>
+</body>
+</html>
