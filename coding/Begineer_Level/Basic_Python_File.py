@@ -1,3 +1,4 @@
+
 ex_var = 7
 print(ex_var)
 ex_var_second = 7.6
@@ -20,3 +21,17 @@ Sum_integer = (number_1 + number_2 + number_3 + number_4 + number_5 + number_6)
 Sum_round = round(number_1 + number_2 + number_3 + number_4 + number_5 + number_6)
 print(Sum_integer)
 print(Sum_round)
+
+print("*****************************************************")
+string_value = "Just Do it!"
+print_i = string_value[8:9]
+print(print_i)
+print_do = string_value[5:7]
+print(print_do)
+print_it = string_value[8:10]
+print(print_it)
+print_just = string_value[0:5]
+print(print_just)
+
+concat = ("Don't" + string_value[5:10])
+print(concat)
