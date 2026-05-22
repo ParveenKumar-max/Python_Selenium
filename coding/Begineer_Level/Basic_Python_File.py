@@ -88,6 +88,9 @@ def volume_calculator(length, width, height):
     
 print("The volume of the rectangular prism is " + str(volume_calculator(length, width, height)) + " cubic feet.")
 
+
+print("********************Programming Knowledge*********************************")
+
 # Celsius to Fahrenheit Solution with integers
 
 celcius_temp = int(input("Enter an integer value in Celcius"))
