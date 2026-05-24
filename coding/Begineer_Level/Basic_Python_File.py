@@ -1,4 +1,4 @@
-print("***********************PYTHON BASICS******************************")
+print("***********************PYTHON BASICS****************************** \n ")
 ex_var = 7
 print(ex_var)
 ex_var_second = 7.6
@@ -22,7 +22,7 @@ Sum_round = round(number_1 + number_2 + number_3 + number_4 + number_5 + number_
 print(Sum_integer)
 print(Sum_round)
 
-print("***********************HOW TO WORK WITH INDEXING******************************")
+print("***********************HOW TO WORK WITH INDEXING****************************** \n")
 string_value = "Just Do it!"
 print_i = string_value[8:9]
 print(print_i)
@@ -36,7 +36,7 @@ print(print_just)
 concat = ("Don't" + string_value[5:10])
 print(concat)
 
-print("*******************HOW TO USE TYPES INPUT**********************************")
+print("*******************HOW TO USE TYPES INPUT********************************** \n ")
 
 var_one_more = 31.333
 print(type(var_one_more))
@@ -49,7 +49,7 @@ print("\"Hello, I'm Parveen,\n it's nice to meet you!\"")
 print("*******\n *****\n  ***\n   *")
 print("   *\n  ***\n *****\n*******")
 
-print("********************STRINGS*********************************")
+print("********************STRINGS********************************* \n")
 
 
 value_input = int(input("Enter your name"))
@@ -67,7 +67,7 @@ print("So your name is " + name + ", \n your quest is " + quest + ", \n and your
 
 
 
-print("********************FUNCTIONS*********************************")
+print("********************FUNCTIONS********************************* \n")
 
 def hello_world_printer():
     print("Hello World!")
@@ -89,11 +89,11 @@ def volume_calculator(length, width, height):
 print("The volume of the rectangular prism is " + str(volume_calculator(length, width, height)) + " cubic feet.")
 
 
-print("********************Programming Knowledge*********************************")
+print("********************Programming Knowledge********************************* \n")
 
 # Celsius to Fahrenheit Solution with integers
 
-celcius_temp = int(input("Enter an integer value in Celcius"))
+celcius_temp = int(input("Enter an integer value in Celcius."))
 
 def fahrenheit(cel):
     # To avoid the approximation error that would occur if the float 1.8 was used in the calculation, 1.8 * 10 is used
@@ -117,6 +117,10 @@ def fahrenheit(cel):
  
 print("The Fahrenheit equivalent of " + str(celsius) + " degrees Celsius is " + str(fahrenheit(celsius)) + ".")
 
+print("********************Programming Knowledge 2 ********************************* \n")
+
+
+
 # Miles Per Gallon Solution with random integers
 
 from random import randint
@@ -130,9 +134,6 @@ print("The car can travel " + str(miles // fuel) + " miles per gallon.")
 print("The car's fuel tank can hold " + str(fuel) + " gallons.")
 # displays the number of miles that the car can travel on a full tank
 print("The car can travel " + str(miles) + " miles on a full tank.")
-
-
-
 
 
 
