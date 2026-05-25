@@ -125,7 +125,72 @@ def fact_two(value2):
     return result
 print("The factorial of 2 is " + str(fact_two(2)))
 
-print("******************** String Function ********************************* \n")
+print("******************** String Function Part 1********************************* \n")
 
-mixed_case = ("A Song of Ice and Fire".isupper())
-print(mixed_case)
+mixed_case = "A Song of Ice and Fire"
+print(mixed_case.isupper())
+
+print(mixed_case.islower())
+
+print(mixed_case.upper())
+
+print(mixed_case.lower())
+
+print(mixed_case.istitle())
+
+print(mixed_case.startswith("A"))
+
+print(mixed_case.endswith("e"))
+
+spliting_value = mixed_case.split()
+print(spliting_value)
+
+
+spliting_value = ("".join(mixed_case).isalpha())
+print(spliting_value)
+
+print("******************** String Function Part 2********************************* \n")
+
+the_string = "North Dakota"
+print(the_string.rjust(17))  #      North Dakota
+print(the_string.ljust(17), "*")
+
+center_plus = the_string.center(16,"+")
+print(center_plus)
+
+print(the_string.lstrip("North"))
+print(center_plus.rstrip("+"))
+print(center_plus.strip("+"))
+
+print(the_string.replace("North", "South"))
+
+print("******************** String Function Part 3********************************* \n")
+
+# Reverse the Value
+
+len_value = input("Enter any number : ")
+empty_value = ""
+for num in len_value:
+    empty_value = num + empty_value
+print("The actaul value: " + str(len_value) + "And Reversed value: " + str(empty_value))
+
+# Reverse the string 2nd way
+
+user_string = input("Please enter a string.")
+reversed = ""
+ 
+for item in range(len(user_string) - 1, -1, -1):
+    reversed += user_string[item]
+ 
+print(reversed)
+
+print("************************** Word Counter *************************")
+
+str_1 = "James Bond is 007."
+str_2 = "When the moon hits your eye like a big pizza pie, that's amore!"
+str_3 = "Anyway, like I was sayin', shrimp is the fruit of the sea. You can barbecue it, boil it, broil it, bake it, \
+saute it. Dey's uh, shrimp-kabobs, shrimp creole, shrimp gumbo. Pan fried, deep fried, stir-fried. There's pineapple \
+shrimp, lemon shrimp, coconut shrimp, pepper shrimp, shrimp soup, shrimp stew, shrimp salad, shrimp and potatoes, \
+shrimp burger, shrimp sandwich. That- that's about it."
+
+
