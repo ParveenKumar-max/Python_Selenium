@@ -1,0 +1,23 @@
+print("**************************** List ( IN & NOT IN )*********************")
+
+my_list = [1, 2.12, "Parveen", True , [1, 2, 3]]
+one_more_list = list("Parveen")
+print("e" in one_more_list)
+print("a" not in one_more_list)
+
+print("**************************** List - Indexing *********************")
+
+my_list_value = [[0, 2], [4, 6], [8, 10], [12, 14]]
+print(my_list_value[0])
+print(my_list_value[3][1])
+
+my_list_value_01 = ["chair", "table", "desk", "lamp", "bed"]
+print(my_list_value_01[-5])
+print("Most people own at least 2 chairs" + str(my_list_value[0][1]) + " " +str(my_list_value_01[0]) + "s.")
+
+my_list_value_02 = [0.98, 8.76, 6.54, 4.32]
+print(my_list_value_02[1:])  # it will print all value from index 1 to the end of the list
+print(my_list_value_02[1:3])
+print(my_list_value_02[:2])
+
+print("**************************** List - Delete & Remove *********************")

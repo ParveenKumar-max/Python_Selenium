@@ -168,7 +168,7 @@ print("******************** String Function Part 3******************************
 
 # Reverse the Value
 
-len_value = input("Enter any number : ")
+len_value = input("Please enter the string : ")
 empty_value = ""
 for num in len_value:
     empty_value = num + empty_value
@@ -192,5 +192,20 @@ str_3 = "Anyway, like I was sayin', shrimp is the fruit of the sea. You can barb
 saute it. Dey's uh, shrimp-kabobs, shrimp creole, shrimp gumbo. Pan fried, deep fried, stir-fried. There's pineapple \
 shrimp, lemon shrimp, coconut shrimp, pepper shrimp, shrimp soup, shrimp stew, shrimp salad, shrimp and potatoes, \
 shrimp burger, shrimp sandwich. That- that's about it."
+
+def value_findout(words):
+    value_01 = ""
+    value_02 = 1
+
+    for num in words:
+        if num.isalnum() or num.isspace() or num == 0 or num == "'":
+            value_01 = value_01 + num
+    for num1 in value_01:
+        if num1 == " ":
+            value_02 = value_02 + 1
+    return value_02
+
+print(value_findout(str_1))
+
 
 
