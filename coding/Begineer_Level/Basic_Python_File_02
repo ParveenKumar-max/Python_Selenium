@@ -21,3 +21,17 @@ print(my_list_value_02[1:3])
 print(my_list_value_02[:2])
 
 print("**************************** List - Delete & Remove *********************")
+
+arctic_animals = ["elephant", "penguin", "elephant", "polar bear", "walrus", "tiger", "reindeer","tiger"]
+del arctic_animals[2] # it will delete the value of index 1, which is elephant
+print(arctic_animals)
+arctic_animals.remove("tiger") 
+# it will remove the value of "tiger" from the list, and if there are multiple "tiger" in the list,
+#  it will remove the first one it finds  
+print(arctic_animals)
+arctic_animals.append("arctic fox")
+print(arctic_animals)
+arctic_animals.insert(1, "snowy owl")
+print(arctic_animals)
+print(arctic_animals.pop())
+print(arctic_animals.pop(2))
