@@ -1,211 +1,140 @@
-print("********************Variables********************************* \n")
-
-global_var_one = 30
-global_var_two = "Var_3"
-
-print("Global variables before calling functions:", global_var_one, global_var_two)
-
-def local_scope_example(var_one, var_two):          # var_one and var_two are local inside this function
-    var_one = 10
-    var_two = "Var_1"
-    return var_one, var_two
-
-print("Local function returned:", local_scope_example(global_var_one, global_var_two))
-print("Global variables after local function call:", global_var_one, global_var_two)
+print("***********************PYTHON BASICS****************************** \n ")
+ex_var = 7
+print(ex_var)
+ex_var_second = 7.6
+print(ex_var_second)
+ex_var_third = True
+print(ex_var_third)
+ex_var = 9
+print(ex_var + (10*90.123))
 
 
-def global_scope_example():
-    global global_var_one, global_var_two
-    global_var_one = 20
-    global_var_two = "Var_2"
-    return global_var_one, global_var_two
+# Will divide all variables with 100, because price is in $ dollars
 
-print("Global function returned:", global_scope_example())
-print("Global variables after global function call:", global_var_one, global_var_two)
+number_1 = 16.68 * 100
+number_2  = 6.98 * 100
+number_3 = 16.78 * 100
+number_4 = 15.26 * 100
+number_5 = 3.00 * 100
+number_6 = 4.39 * 100
+Sum_integer = (number_1 + number_2 + number_3 + number_4 + number_5 + number_6)
+Sum_round = round(number_1 + number_2 + number_3 + number_4 + number_5 + number_6)
+print(Sum_integer)
+print(Sum_round)
 
-print("******************** If ELSE wth Random import functions********************************* \n")
+print("***********************HOW TO WORK WITH INDEXING****************************** \n")
+string_value = "Just Do it!"
+print_i = string_value[8:9]
+print(print_i)
+print_do = string_value[5:7]
+print(print_do)
+print_it = string_value[8:10]
+print(print_it)
+print_just = string_value[0:5]
+print(print_just)
 
-# Roman Numeral Equivalent Solution - Program
+concat = ("Don't" + string_value[5:10])
+print(concat)
+
+print("*******************HOW TO USE TYPES INPUT********************************** \n ")
+
+var_one_more = 31.333
+print(type(var_one_more))
+var_two_more = str(31.333)
+print("String", type(var_two_more))
+print("\"Hello, I'm Parveen,\n it's nice to meet you!\"")
+
+
+
+print("*******\n *****\n  ***\n   *")
+print("   *\n  ***\n *****\n*******")
+
+print("********************STRINGS********************************* \n")
+
+
+value_input = int(input("Enter your name"))
+sum = 10
+print("My name is", value_input + sum) # it will give TypeError: can only concatenate str (not "int") to str
+# Here it will gove error, because input returns type is always string, and we can't add string with integer, so we need to convert sum into string or value_input into integer,
+#and you can't concatinate str + int
+print(type(value_input))
+
+name = input("What is your name?")
+quest = input("What is your quest?")
+color = input("What is your favorite color?")
+ 
+print("So your name is " + name + ", \n your quest is " + quest + ", \n and your favorite color is " + color + ".")
+
+
+
+print("********************FUNCTIONS********************************* \n")
+
+def hello_world_printer():
+    print("Hello World!")
+hello_world_printer()
+
+def name_printer(name):
+    print("Hello", name)
+name = input("What is your name ?")
+name_printer(name)
+
+
+length = int(input("Enter length"))
+width = int(input("Enter width"))
+height = int(input("Enter height"))
+
+def volume_calculator(length, width, height):
+    return length * width * height
+    
+print("The volume of the rectangular prism is " + str(volume_calculator(length, width, height)) + " cubic feet.")
+
+
+print("********************Programming Knowledge********************************* \n")
+
+# Celsius to Fahrenheit Solution with integers
+
+celcius_temp = int(input("Enter an integer value in Celcius."))
+
+def fahrenheit(cel):
+    # To avoid the approximation error that would occur if the float 1.8 was used in the calculation, 1.8 * 10 is used
+    # instead, resulting in the integer 18.  To balance this out, 32 is also multiplied by 10 to get 320.  After the
+    # calculations in the parentheses are finished, the result is divided by 10, which gives the correct Fahrenheit
+    # F = 1.8 * C + 32
+    return 18 * cel + 320 / 10
+
+print("The Fahrenheit equivalent of", str(celcius_temp), "degrees Celsius is", str(fahrenheit(celcius_temp)), "degrees Fahrenheit.")
+
+# Celsius to Fahrenheit Solution with round()
+
+celsius = int(input("Please enter an integer value for degrees celsius. "))
+ 
+ 
+def fahrenheit(cel):
+    # The second argument of round() is 1 since we only want the Fahrenheit temperature to be displayed with 1 number
+    # after the decimal point
+    return round((1.8 * cel + 32), 1)
+ 
+ 
+print("The Fahrenheit equivalent of " + str(celsius) + " degrees Celsius is " + str(fahrenheit(celsius)) + ".")
+
+print("********************Programming Knowledge 2 ********************************* \n")
+
+
+
+# Miles Per Gallon Solution with random integers
+
 from random import randint
-Random_number = randint(1, 10)
+# generates random integer between and inclusive of 10 and 25 to represent gas in the car's fuel tank
+fuel = randint(10, 25)
+# generates random integer between and inclusive of 200 and 400 to represent miles the car can go without refueling
+miles = randint(200, 400)
+# calculates and displays the MPG of the car assuming car manufacturers overestimates in their claims
+print("The car can travel " + str(miles // fuel) + " miles per gallon.")
+# displays the number of gallons of fuel that the car's fuel tank can hold
+print("The car's fuel tank can hold " + str(fuel) + " gallons.")
+# displays the number of miles that the car can travel on a full tank
+print("The car can travel " + str(miles) + " miles on a full tank.")
 
-if Random_number == 1:
-    print("The roman numeral equivalent of " + str(Random_number) + " is I")
-elif Random_number == 2:
-    print("The roman numeral equivalent of " + str(Random_number) + " is II")  
-elif Random_number == 3:
-    print("The roman numeral equivalent of " + str(Random_number) + " is III")
-elif Random_number == 4:
-    print("The roman numeral equivalent of " + str(Random_number) + " is IV")
-elif Random_number == 5:
-    print("The roman numeral equivalent of " + str(Random_number) + " is V")
-elif Random_number == 6:
-    print("The roman numeral equivalent of " + str(Random_number) + " is VI")
-elif Random_number == 7:
-    print("The roman numeral equivalent of " + str(Random_number) + " is VII")
-elif Random_number == 8:
-    print("The roman numeral equivalent of " + str(Random_number) + " is VIII")
-elif Random_number == 9:
-    print("The roman numeral equivalent of " + str(Random_number) + " is IX")
-elif Random_number == 10:
-    print("The roman numeral equivalent of " + str(Random_number) + " is X")
-else:
-    print("The number is out of range \n")
-
-
-print("********************Intro Of Loops********************************* \n ")
-
-print(" *******************While Loop**************************************")
-
-while_loop = 10
-while while_loop > 0:
-    print(while_loop)
-    while_loop -= 1
-
-# For while loop, you always need exist point, if you didn't use, the program will run in infinite loop.
-
-sum_of_while = input("Enter a number to find out the sum of numbers..")
-int_value1 = int(sum_of_while)
-sum = 0
-while int_value1 > 0:
-    sum = sum + int_value1  # This line is used to add the numbers
-    int_value1 -= 1         # This line is used to decrease the value of int_value1 by 1 in each iteration, so that the loop can eventually terminate when int_value1 becomes 0 or negative.
-print("The sum of numbers from 1 to " + sum_of_while + " is " + str(sum))
-
-
-print(" *********************** for loop *******************")
-
-letter = "Hello Pareen !"
-for word in letter:
-    print(word)
-
-
-# Find The Number of Characters in A String
-
-one_string = input("Enter a string to find out the number of characters in it..")
-count = 0
-for char in one_string:
-    count = count + 1
-print("The number of Enter the sting is. " + str(one_string))
-print("The number of character in the string is ", + (count))
-
-
-print(" *********************** RANGE *******************")
-
-one_range = range(11,16)
-for num in one_range:
-    print(num)
-
-# Programming Challenge: Fizz Buzz
-print("********************Fizz Buzz********************************* \n")
-
-
-for num in range (1 , 10):
-    if num % 3 == 0 and num % 5 == 0:
-        print("FizzBuzz")
-    elif num % 3 == 0:
-        print("Fizz")
-    elif num % 5 == 0:
-        print("Buzz")
-    else:
-        print(num)
-
-def fact(value):
-    if value == 0 or value == 1:
-        return 1
-    else:
-        return value * fact(value - 1)
-print("The factorial of 5 is " + str(fact(5)))
-
-def fact_two(value2):
-    result = 1
-
-    for num in range (value2, 1, -1):
-        result = result * num
-    return result
-print("The factorial of 2 is " + str(fact_two(2)))
-
-print("******************** String Function Part 1********************************* \n")
-
-mixed_case = "A Song of Ice and Fire"
-print(mixed_case.isupper())
-
-print(mixed_case.islower())
-
-print(mixed_case.upper())
-
-print(mixed_case.lower())
-
-print(mixed_case.istitle())
-
-print(mixed_case.startswith("A"))
-
-print(mixed_case.endswith("e"))
-
-spliting_value = mixed_case.split()
-print(spliting_value)
-
-
-spliting_value = ("".join(mixed_case).isalpha())
-print(spliting_value)
-
-print("******************** String Function Part 2********************************* \n")
-
-the_string = "North Dakota"
-print(the_string.rjust(17))  #      North Dakota
-print(the_string.ljust(17), "*")
-
-center_plus = the_string.center(16,"+")
-print(center_plus)
-
-print(the_string.lstrip("North"))
-print(center_plus.rstrip("+"))
-print(center_plus.strip("+"))
-
-print(the_string.replace("North", "South"))
-
-print("******************** String Function Part 3********************************* \n")
-
-# Reverse the Value
-
-len_value = input("Please enter the string : ")
-empty_value = ""
-for num in len_value:
-    empty_value = num + empty_value
-print("The actaul value: " + str(len_value) + "And Reversed value: " + str(empty_value))
-
-# Reverse the string 2nd way
-
-user_string = input("Please enter a string.")
-reversed = ""
- 
-for item in range(len(user_string) - 1, -1, -1):
-    reversed += user_string[item]
- 
-print(reversed)
-
-print("************************** Word Counter *************************")
-
-str_1 = "James Bond is 007."
-str_2 = "When the moon hits your eye like a big pizza pie, that's amore!"
-str_3 = "Anyway, like I was sayin', shrimp is the fruit of the sea. You can barbecue it, boil it, broil it, bake it, \
-saute it. Dey's uh, shrimp-kabobs, shrimp creole, shrimp gumbo. Pan fried, deep fried, stir-fried. There's pineapple \
-shrimp, lemon shrimp, coconut shrimp, pepper shrimp, shrimp soup, shrimp stew, shrimp salad, shrimp and potatoes, \
-shrimp burger, shrimp sandwich. That- that's about it."
-
-def value_findout(words):
-    value_01 = ""
-    value_02 = 1
-
-    for num in words:
-        if num.isalnum() or num.isspace() or num == 0 or num == "'":
-            value_01 = value_01 + num
-    for num1 in value_01:
-        if num1 == " ":
-            value_02 = value_02 + 1
-    return value_02
-
-print(value_findout(str_1))
 
 
 

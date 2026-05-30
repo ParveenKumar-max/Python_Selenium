@@ -35,3 +35,35 @@ arctic_animals.insert(1, "snowy owl")
 print(arctic_animals)
 print(arctic_animals.pop())
 print(arctic_animals.pop(2))
+
+print("**************************** Dictionary ********************* \n")
+Dict_01 = {"a" : "apple", "b" : "ball", "c" : "cat", "d" : "dog", "e" : "elephant"}
+print(Dict_01["c"])
+print(Dict_01.keys())
+print("a" in Dict_01)
+print("b" not in Dict_01)
+
+print("*************** Dictionary -- Keys(), Values(), items(), get() ******************* \n")
+
+Dict_02 = {"Queen": "Bohemian Rhapsody",
+            "Bee Gees": "Stayin' Alive",
+            "U2": "One",
+            "Michael Jackson": "Billie Jean",
+            "The Beatles": "Hey Jude",
+            "Bob Dylan": "Like A Rolling Stone"}
+print("The length f the dictionary is :" , len(Dict_02))
+print(Dict_02.keys())
+print(Dict_02.values())
+print(Dict_02.items()) 
+
+# it will return key-value pair from the dictionary
+for keys in Dict_02.keys():
+    print(keys)
+
+if Dict_02.get("Promise of the Real"):
+    print(Dict_02.values)
+else:
+    print("The key is not found in the dictionary.")
+
+print("*************** Dictionary -- .fromkeys(), .pop(), .popitem() ******************* \n")
+
