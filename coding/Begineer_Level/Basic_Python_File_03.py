@@ -67,3 +67,35 @@ else:
 
 print("*************** Dictionary -- .fromkeys(), .pop(), .popitem() ******************* \n")
 
+
+for key, value in {}.fromkeys("bcdfghjklmnpqrstvwxyz", "consonant").items():
+    print(key, value)
+fast_food_items = {"McDonald's": "Big Mac", "Burger King": "Whopper", "Chick-fil-A": "Original Chicken Sandwich"}
+print(fast_food_items.pop("McDonald's")) # it will remove the key "McDonald's" and its corresponding value "Big Mac" from the dictionary, and it will return the value "Big Mac"
+
+fast_food_items.popitem() # it will remove the last key-value pair from the dictionary, and it will return the removed key-value pair as a tuple
+print(fast_food_items)
+
+
+print("*************** Dictionary -- .clear(), .copy(), .update() ******************* \n")
+
+Dict_03 = {"a" : "apple", "b" : "ball", "c" : "cat", "d" : "dog", "e" : "elephant"}
+print(Dict_03)
+Dict_03.clear() # it will remove all key-value pairs from the dictionary, and it will return an empty dictionary
+print(Dict_03)
+
+internet_celebrities = {"DrDisrespect": "YouTube", "ZLaner": "Facebook", "Ninja": "Mixer"}
+print(internet_celebrities)
+another_one = {"shroud": "Twitch"}
+internet_celebrities.update(another_one) # it will add the key-value pair from another_one to internet_celebrities, and if there are any duplicate keys, it will update the value of the existing key in internet_celebrities with the value from another_one
+print(internet_celebrities)
+
+Another_Dict = internet_celebrities.copy()
+Another_Dict["shroud"] = "YouTube"  # it will change the value of the key "shroud" in Another_Dict to "YouTube", but it will not affect the value of the key "shroud" in internet_celebrities, because we have created a copy of internet_celebrities and assigned it to Another_Dict, so they are two different dictionaries in memory, and changing one dictionary will not affect the other dictionary
+print(Another_Dict)
+
+print(internet_celebrities.clear()) # it will remove all key-value pairs from the dictionary, and it will return an empty dictionary
+print(Another_Dict)
+
+print("*************** Dictionary -- .setdefault() ******************* \n")
+
