@@ -1,6 +1,14 @@
+# Main Concept of Python
+
+
 print("**************************** List ( IN & NOT IN )*********************")
 
 my_list = [1, 2.12, "Parveen", True , [1, 2, 3]]
+my_list[3] = "Hello"
+print(my_list)
+my_list.insert(3, "World")
+print(my_list)
+
 one_more_list = list("Parveen")
 print("e" in one_more_list)
 print("a" not in one_more_list)
@@ -41,7 +49,7 @@ Dict_01 = {"a" : "apple", "b" : "ball", "c" : "cat", "d" : "dog", "e" : "elephan
 print(Dict_01["c"])
 print(Dict_01.keys())
 print("a" in Dict_01)
-print("b" not in Dict_01)
+print("b" not in Dict_01) 
 
 print("*************** Dictionary -- Keys(), Values(), items(), get() ******************* \n")
 
@@ -99,3 +107,60 @@ print(Another_Dict)
 
 print("*************** Dictionary -- .setdefault() ******************* \n")
 
+# "If the key exists, give me its value. If it doesn't exist, create it with this default value and then give me that value.
+
+student = {"name":"Parveen", "age": 25, "major" : "Software Engineering"}
+print(student.setdefault("name", "John")) # it will return the value of the key "name" which is "Parveen", because the key "name" already exists in the dictionary, so it will not create a new key-value pair, and it will not change the existing value of the key "name"
+print(student.setdefault("grade", "A")) # it will create a new key-value pair "grade": "A" in the dictionary, because the key "grade" does not exist in the dictionary, and it will return the value "A"
+print(student)
+
+
+
+print("********************** tuple() *************************** \n")
+my_tuple = (1, 1, 2.12, "Parveen", True , [1, 2, 3])
+print(my_tuple)
+#my_tuple.insert(3, "Hello") 
+# it will give AttributeError: 'tuple' object has no attribute 'insert', because tuples are immutable, 
+# which means we cannot change the values of a tuple after it has been created, so we cannot use the insert() method
+#  to add a new value to a tuple, and we cannot change the existing values of a tuple, 
+# but we can create a new tuple by concatenating two tuples together,
+#  or by using the + operator to add a new value to a tuple, but we cannot change the existing values of a tuple
+
+#my_tuple.append("Hello")
+# it will give AttributeError: 'tuple' object has no attribute 'append',
+#  because tuples are immutable and do not support item assignment or addition of new elements
+
+print("********************** tuple()- count() and index() *************************** \n")
+
+my_list_01 = (1, 1, 2.12, "Parveen", True , [1, 2, 3], "Parveen")
+count = my_list_01.count("Parveen") # it will return the number of times the value "Parveen" appears in the tuple, which is 2
+index = my_list_01.index("Parveen") # it will return the index of the first occurrence of the value "Parveen" in the tuple, which is 3
+print(index)
+print(count)
+
+print("********************** set() *************************** \n")
+
+# set is mutuable in nature, unfloow order, does not duplicate value, add(), update(), remove(), discard()
+
+set_01 = {1, 2, 3, 4.56, True, "Parveen", (1, 2, 3), 1, 2.12}
+print(set_01) # it will print the set with unique values,
+# and it will not maintain the order of the values in the set, 
+# because sets are unordered collections of unique elements, 
+# so it will remove the duplicate values from the set, and it will not maintain the order of the values in the set
+
+set_01.add("Add one string" +" " + "Hello")
+print(set_01)
+
+set_01.update(["Update four values" + " " +"World", "Python", "Programming", "Language", "Parveen"])
+print(set_01) # "Parveen is also there in set, but added one more "Parveen" in set, but it will not add another "Parveen" in the set, 
+# because sets do not allow duplicate values, 
+# so it will only keep one "Parveen" in the set, and it will ignore the second "Parveen" when we try to add it to the set
+
+
+set_01.remove("Add one string" +" " + "Hello") # it will remove the value "Parveen" from the set -- ALL VALUES OF PARVEEN, 
+# and if the value "Parveen" is not found in the set, it will raise a KeyError
+print(set_01)
+
+set_01.discard(1)
+print(set_01) # it will remove the value 1 from the set, 
+# and if the value 1 is not found in the set, it will not raise any error, it will simply do nothing
