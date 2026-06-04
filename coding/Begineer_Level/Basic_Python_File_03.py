@@ -164,3 +164,9 @@ print(set_01)
 set_01.discard(1)
 print(set_01) # it will remove the value 1 from the set, 
 # and if the value 1 is not found in the set, it will not raise any error, it will simply do nothing
+
+
+
+num = 10
+for i in range(1, num-1):
+    print(" " * (num -i) + "*" * (2*i - 1))
